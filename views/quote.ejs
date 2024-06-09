@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote</title>
+    <style>
+        body{
+            background-color: #DAD7CD;
+            color: #3A5A40;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            height: 90vh;
+        }
+        .heading{
+            font-size: 40px;
+        }
+        .author{
+            font-size: 20px;
+            margin-bottom: 30px; 
+        }
+        .btnCont{
+            display: flex;
+            flex-direction: row;
+        }
+        .btn{
+            background-color: #A3B18A;
+            color: #344E41;
+            border: 0;
+            margin: 5px 5px 10px 5px;
+            padding: 10px 20px 10px 20px;
+            font-size: 14px;
+            font-family: "Source Sans 3", sans-serif;
+        }
+        @media screen and (max-width: 600px) {
+            .heading{
+                font-size: 20px;
+            }
+            .author{
+                font-size: 10px;
+                margin-bottom: 15px;
+            }
+            .btn{
+                font-size: 8px;
+                padding: 5px 10px 5px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="heading">"<%= quoteData.cont %>"</h1>
+    <p class="author">- <%= quoteData.auth %></p>
+    <div class="btnCont">
+        <form action="\">
+            <input class="btn" type="submit" value="Home">
+        </form>
+        <form action="\quote">
+            <input class="btn" type="submit" value="Regenerate">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+        body {
+            background-color: #DAD7CD;
+            color: #3A5A40;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            font-family: "Source Sans 3", sans-serif;
+        }
+
+
+        .heading {
+            color: #344E41;
+            font-size: 60px;
+            font-family: "Libre Baskerville", serif;
+        }
+
+        .desc {
+            font-size: 20px
+        }
+
+        .authorInp {
+            width: 70%;
+            height: 2vh;
+            padding: 10px 30px 10px 30px;
+            background-color: #DAD7CD;
+            border: 1px solid #A3B18A;
+            margin-bottom: 10px;
+        }
+
+        .authorInp::placeholder {
+            color: #588157b4;
+            font-family: "Source Sans 3", sans-serif;
+            overflow: visible;
+        }
+
+        .submitBtn {
+            background-color: #A3B18A;
+            color: #344E41;
+            border: 0;
+            margin-bottom: 10px;
+            padding: 10px 20px 10px 20px;
+            font-size: 14px;
+            font-family: "Source Sans 3", sans-serif;
+        }
+
+        .authorDesc {
+            font-size: 13px;
+            display: flex;
+        }
+
+        .dropIcn {
+            margin-right: 15px;
+        }
+
+        .rotNinety {
+            transform: rotate(-90deg);
+            transition: 0.2s ease-out;
+        }
+
+        .authList {
+            opacity: 0;
+            text-align: left;
+            font-size: 11px;
+        }
+
+        .authList ul li {
+            list-style: none;
+        }
+
+        #authListText {
+            margin: 0;
+        }
+
+        .show {
+            opacity: 100;
+            transition: ease-in 0.3s;
+        }
+        @media screen and (max-width: 600px){
+            .heading{
+                font-size: 30px;
+            }
+            .desc{
+                font-size: 10px;
+            }
+            .authorInp{
+                height: 1vh;
+                width: 60%;
+                font-size: 10px;
+            }
+            .submitBtn{
+                font-size: 10px;
+                padding: 5px 10px 5px 10px;
+            }
+            .authorDesc{
+                font-size: 11px;
+            }
+            .authList{
+                font-size: 7px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="heading">Random Wisdom</h1>
+    <p class="desc">Welcome to Random Wisdom, your gateway to a world of inspiration and reflection!</p>
+    <form class="inputForm" action="/postAuthor" method="post">
+        <input class="authorInp" type="text" name="author" id="author"
+            placeholder="Enter the name of the Author (Optional)">
+        <input class="submitBtn" type="submit" value="Generate Quote">
+    </form>
+    <div class="authorDesc">
+        <div class="dropIcn">
+            <div>
+                <i id="icn" class="fa-solid fa-caret-down rotNinety icn"></i>
+            </div>
+        </div>
+        <p id="authListText">Author List</p>
+    </div>
+    <div class="authList">
+        <ul>
+            <li>Albert Einstein</li>
+            <li>Stephen Hawking</li>
+            <li>Napoleon Hill</li>
+            <li>Bruce Lee</li>
+            <li>and more...</li>
+        </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $("#icn").click(function () {
+            $("#icn").toggleClass("rotNinety");
+            $(".authList").toggleClass('show');
+        })
+    </script>
+</body>
+
+</html>
